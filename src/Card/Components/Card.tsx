@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-class ExampleItem extends React.Component {
+class Card extends React.Component {
   public render() {
     return (
       <div className="card">card element</div>
@@ -8,4 +8,4 @@ class ExampleItem extends React.Component {
   }
 }
 
-export default ExampleItem;
+export default Card;
