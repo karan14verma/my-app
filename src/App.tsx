@@ -1,7 +1,7 @@
 import * as React from 'react';
-import './App.css';
-import ExampleItem from './components/ExampleItem';
+import './css/App.css';
 
+import CardContainer from './Card/Containers/CardContainer';
 import logo from './logo.svg';
 
 class App extends React.Component {
@@ -12,7 +12,7 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Hello World</h1>
         </header>
-        <ExampleItem/>
+        <CardContainer/>
       </div>
     );
   }
