@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Card from '../components/Card';
+import Card from '../Components/Card';
 
 class CardContainer extends React.Component {
     public render() {
