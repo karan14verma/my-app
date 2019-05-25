@@ -1,10 +1,12 @@
 import * as React from 'react';
-import Card from '../Components/Card';
+import CardComponent from '../Components/CardComponent';
 
 class CardContainer extends React.Component {
+  // all the logic stays in the containers
     public render() {
       return (
-        <Card />
+        <CardComponent
+        />
       );
     }
 }

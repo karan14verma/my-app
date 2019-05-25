@@ -29,7 +29,9 @@
 
 .card {
   text-align: center;
-  color: blue;
+  background-color: blue;
+  width: auto;
+  margin:0 auto;
 }
 
 
