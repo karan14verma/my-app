@@ -35,7 +35,8 @@
 }
 
 .strikedText{
-  text-decoration: line-through;
+  display: inline-block;
+  text-decoration-line: line-through;
 }
 
 

@@ -11,7 +11,7 @@ interface IState{
 
 class ListItem extends React.Component<IProps, IState> {
     state={
-        isChecked : true,
+        isChecked : false,
     }
 
     onChange = (event: any, checked: boolean ) => {
@@ -21,20 +21,11 @@ class ListItem extends React.Component<IProps, IState> {
     }
 
     render() {
-        let text;
-        if(this.state.isChecked){
-            text = <div className="strikedText">{this.props.value}</div>;
-        }else{
-            text = this.props.value
-        }
+        const text = this.state.isChecked ? <div className="strikedText">{this.props.value}</div> : this.props.value;
         return (
-            <React.Fragment
-            >
-              <Checkbox
-                // checked={this.state.isChecked}
-                onChange={this.onChange}
-              />
-              {text}
+            <React.Fragment>
+                
+            <Checkbox onChange={this.onChange}/> {text}
               
             </React.Fragment>
     );
