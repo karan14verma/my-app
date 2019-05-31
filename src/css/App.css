@@ -39,5 +39,12 @@
   text-decoration-line: line-through;
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.input{
+  margin: 1px;
+}
 
