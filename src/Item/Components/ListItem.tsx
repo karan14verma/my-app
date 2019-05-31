@@ -1,4 +1,3 @@
-import { FormControlLabel } from '@material-ui/core';
 import Checkbox from '@material-ui/core/Checkbox';
 import * as React from 'react';
 
@@ -11,17 +10,23 @@ interface IState{
 }
 
 class ListItem extends React.Component<IProps, IState> {
-    public render() {
+    state={
+        isChecked : false,
+    }
+
+    onChange = (event: any, checked: boolean ) => {
+        this.setState({
+            isChecked: event.target.checked,
+        })
+    }
+
+    render() {
+        const text = this.state.isChecked ? <div className="strikedText">{this.props.value}</div> : this.props.value;
         return (
-            <React.Fragment
-            >
-                <FormControlLabel
-                    control={
-                        <Checkbox                        
-                        />
-                    }
-                    label={this.props.value}
-                />
+            <React.Fragment>
+                
+            <Checkbox onChange={this.onChange}/> {text}
+              
             </React.Fragment>
     );
   }
