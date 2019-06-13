@@ -25,7 +25,7 @@ class ListItem extends React.Component<IProps, IState> {
         return (
             <React.Fragment>
                 
-            <Checkbox onChange={this.onChange}/> {text}
+                <p><Checkbox onChange={this.onChange}/> {text} </p>
               
             </React.Fragment>
     );

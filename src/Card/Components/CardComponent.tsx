@@ -3,7 +3,12 @@ import * as React from 'react';
 import CreateNewItem from 'src/Common/Components/CreateNewItem';
 import ListItemContainer from 'src/Item/Containers/ListItemContainer';
 
-class CardComponent extends React.Component {
+interface IProps{
+  listItems: string[];
+}
+
+class CardComponent extends React.Component<IProps> {
+  
   public render() {
     return (
       <React.Fragment>
@@ -12,9 +17,11 @@ class CardComponent extends React.Component {
         className={'card'}
         >
           <CreateNewItem defaultValue= {'Add an item'} />
-          <ListItemContainer>
-           {'card element'}
-          </ListItemContainer>
+          {this.props.listItems.map(item =>(
+            <ListItemContainer>
+              {item}
+           </ListItemContainer>
+          ))} 
        
       </Card>
       
