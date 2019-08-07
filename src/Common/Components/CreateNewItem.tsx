@@ -6,9 +6,6 @@ interface IProps{
     defaultValue: string;
 }
 
-// interface IState{
-// }
-
 class CreateNewItem extends React.Component<IProps> {
 
     public render() {
