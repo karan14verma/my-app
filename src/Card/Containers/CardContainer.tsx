@@ -1,7 +1,12 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import CardComponent from '../Components/CardComponent';
 
-class CardContainer extends React.Component {
+interface IProps{
+  listItems: string[];
+}
+
+class CardContainer extends React.Component<IProps> {
   // all the redux logic stays in the containers
   // list items should come from redux
     public render() {
@@ -12,5 +17,14 @@ class CardContainer extends React.Component {
       );
     }
 }
+export const mapDispatchToProps = (dispatch: any) => ({
 
-export default CardContainer;
+});
+
+export const mapStateToProps = (state: any) => {
+  return {
+    listItems: state.items,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
