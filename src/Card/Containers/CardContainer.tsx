@@ -1,18 +1,19 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import CardComponent from '../Components/CardComponent';
+// import { IRootState } from '../Duck/Index';
 
 interface IProps{
   listItems: string[];
 }
 
-class CardContainer extends React.Component<IProps> {
+export class CardContainer extends React.Component<IProps> {
   // all the redux logic stays in the containers
   // list items should come from redux
     public render() {
       return (
         <CardComponent
-          listItems= {["el1", "el2", "el3"]}
+          listItems= {this.props.listItems}
         />
       );
     }
