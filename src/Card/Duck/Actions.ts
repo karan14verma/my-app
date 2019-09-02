@@ -46,11 +46,19 @@ const createItemHasErrored = (hasErrored: boolean) => {
 	};
 };
 
+const createItemInStore = (item: string) => {
+	return{
+		type: types.ITEM_CREATE_IN_STORE,
+		item
+	}
+}
+
 export default {
     createItemHasErrored,
     createItemIsLoading,
-    createItemSuccess,
+	createItemSuccess,
+	createItemInStore,
     loadItemsHasErrored,
 	loadItemsIsLoading,
-    loadItemsSuccess,
+	loadItemsSuccess,
 };

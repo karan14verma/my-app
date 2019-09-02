@@ -22,10 +22,7 @@ class CreateNewItem extends React.Component<IProps> {
     }
 
     handleChange = (event: any): void => {
-		// this.validateValue(event.target.value);
-		// const name = this.props.generateNameFromInput(event.target.value);
 		this.props.state.onValueChange(event.target.value);
-		// this.props.state.onNameChange(name);
 	}
 
     public render() {

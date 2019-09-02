@@ -18,5 +18,12 @@ export default function ItemReducer(state: IItemReducerState = initialState, act
 			...action.items,
 		};
 	}
+	if(action.type === types.ITEMS_POST_DATA_SUCCESS) {
+		return{
+			...state,
+			...action.item
+		}
+	}
+
 	return state;
 }
