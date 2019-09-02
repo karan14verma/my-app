@@ -1,7 +1,7 @@
 import Card  from '@material-ui/core/Card';
 import * as React from 'react';
-import CreateNewItem from 'src/Common/Components/CreateNewItem';
 import ListItemContainer from 'src/Item/Containers/ListItemContainer';
+import CreateNewItemContainer from '../Containers/CreateNewItemContainer';
 
 interface IProps{
   listItems: string[];
@@ -16,7 +16,7 @@ class CardComponent extends React.Component<IProps> {
         raised={true}
         className={'card'}
         >
-          <CreateNewItem defaultValue= {'Add an item'} />
+          <CreateNewItemContainer />
           {this.props.listItems.map(item =>(
             <ListItemContainer>
               {item}
