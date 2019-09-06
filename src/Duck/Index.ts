@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import items from '../Card/Duck/Reducers'
+import items, { IItemReducerState } from '../Card/Duck/Reducers'
 
 export interface IRootState {
-	readonly items: string[];
+	readonly items: IItemReducerState;
 }
 
 export default combineReducers<IRootState>({
