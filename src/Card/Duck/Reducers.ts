@@ -1,9 +1,22 @@
 import { AnyAction } from 'redux';
 import types from './Types';
+import ItemCollection from '../../Common/Models/ItemCollection'
 
-export type IItemReducerState = {};
+// export type IItemReducerState<T> = {
+// 	byId: { [id: string]: T };
+// 	allIds: string[];
+// 	constructor() {
+// 		this.byId = {};
+// 		this.allIds = [];
+// 	}
+// };
 
-const initialState: IItemReducerState = ['1', '2'];
+export type IItemReducerState = ItemCollection<string>;
+
+const initialState: IItemReducerState = {
+	byId: {},
+	allIds: [],
+}
 
 export const items = (state: any, action: AnyAction) => {
 	return (action.type === types.ITEMS_FETCH_DATA_SUCCESS)
@@ -18,10 +31,11 @@ export default function ItemReducer(state: IItemReducerState = initialState, act
 			...action.items,
 		};
 	}
-	if(action.type === types.ITEMS_POST_DATA_SUCCESS) {
+	if(action.type === types.ITEM_CREATE_IN_STORE) {
 		return{
 			...state,
-			...action.item
+			byId: { ...state.byId, [action.item]: action.item},
+			allIds: state.allIds.concat(action.item),
 		}
 	}
 

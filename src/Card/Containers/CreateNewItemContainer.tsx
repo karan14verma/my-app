@@ -11,7 +11,7 @@ interface IState{
   value: string;
 }
 
-export class CreateNewItemContainer extends React.Component<IProps, IState> {
+export class CreateNewItemContainer extends React.PureComponent<IProps, IState> {
 
   state = {
     value: ''

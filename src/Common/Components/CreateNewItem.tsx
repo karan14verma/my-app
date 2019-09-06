@@ -16,9 +16,9 @@ class CreateNewItem extends React.Component<IProps> {
     }
 
     handleKeyPress = (event: any) => {
-		if (event.charCode === 13 && this.isOkToProceed()) {  // 'Enter' pressed
-			this.props.handleOnCreate(event);
-		}
+		  if (event.charCode === 13 && this.isOkToProceed()) {  // 'Enter' pressed
+	  		this.props.handleOnCreate(event);
+	  	}
     }
 
     handleChange = (event: any): void => {
